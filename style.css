@@ -411,11 +411,11 @@ body {
 
     .wins-info .info-card {
         width: 80%;
+        justify-content: start;
     }
 
     .footer .footer-content .media {
         width: 180px;
-        justify-content: start;
     }
 }
 
