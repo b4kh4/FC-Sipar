@@ -369,6 +369,7 @@ body {
         padding: 10px;
         border-radius: 8px;
         background-color: #b90a0099;
+        backdrop-filter: blur(15px);
         opacity: 0;
         transition: all 0.3s ease;
         transform: scaleY(0);
