@@ -648,7 +648,7 @@ body {
 /* КНОПКА "ОТКРЫТЬ" */
 .open-page {
     width: 20%;
-    min-width: 300px;
+    min-width: 280px;
     height: 40px;
     margin-top: 15px;
     border: 2px solid #ffffff50;
