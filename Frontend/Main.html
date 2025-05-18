@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ФК Сипар - официальный сайт </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top-header">
+    <div class="language"><a href="" class="language-text">RU</a> | <a href="" class="language-text">EN</a></div>
+    <div class="profile">
+        <span> Логин </span>
+        <img src="images/user.png" class="avatar"></img>
+    </div>
+</header>
+
+<header class="main-header">
+    <div class="logo">
+        <img src="images/new-logo.png" alt="LOGO">
+    </div>
+    <nav>
+        <ul class="menu">
+            <li><a href="Main.html">Главная</a></li>
+            <li><a href="About Us.html">О нас</a></li>
+            <li><a href="#">Состав</a></li>
+            <li><a href="Calendar.html">Матчи</a></li>
+            <li><a href="News.html">Новости</a></li>
+        </ul>
+    </nav>
+    <button class="burger" id="burger"> </button>
+</header>
+
+
+<main class="main">
+    <img src="images/banner.png" class="banner">
+
+    <section class="matches-section">
+        <div class="matches">
+            <div class="matches-container">
+                <h1 id="title">Предстоящие Матчи</h1>
+                <div class="match">
+                    <div class="match-date">25 мая 2025, 17:30</div>
+                    <div class="match-title">Сипар vs Истиклол</div>
+                    <div class="match-location">Стадион "Спартак", Душанбе</div>
+                  </div>
+    
+                  <div class="match">
+                    <div class="match-date">18 мая 2025, 20:00</div>
+                    <div class="match-title">Сипар vs Регар-ТадАЗ</div>
+                    <div class="match-location">Стадион "Металлург", Турсунзаде</div>
+                  </div>
+              
+                  <div class="match">
+                    <div class="match-date">25 мая 2025, 17:30</div>
+                    <div class="match-title">Сипар vs Истиклол</div>
+                    <div class="match-location">Стадион "Спартак", Душанбе</div>
+                  </div>
+    
+                  
+            </div>
+            <div class="calendar-container">
+                <aside class="mini-calendar">
+                    <h1 id="calendar-title">Загрузка...</h1>
+                    <div class="day-names">
+                      <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
+                    </div>
+                    <div class="days" id="days"></div>
+                  </aside>
+            </div>
+        </div>
+        <form><button formaction="Calendar.html" formmethod="get" class="open-page">Узнать больше</button></form>
+    </section>
+
+    <section class="players-section">
+        <h1 id="title">Участники</h1>
+        <div class="slider-wrapper">
+          <button class="slider-btn prev">❮</button>
+          <div class="slider-container">
+            <div class="slide">
+              <img src="" alt="" />
+              <div class="info">
+                <h3>Ламин Ямал</h3>
+                <p>Нападающий</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="" alt="" />
+              <div class="info">
+                <h3>Роберт Полсон</h3>
+                <p>Нападающий</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="" alt="" />
+              <div class="info">
+                <h3>Монки Д. Луффи</h3>
+                <p>Полузащитник</p>
+              </div>
+            </div>
+            <div class="slide">
+                <img src="" alt="" />
+                <div class="info">
+                  <h3>Тайлер Дерден</h3>
+                  <p>Полузащитник</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="" alt="" />
+                <div class="info">
+                  <h3>Ророноа Зоро</h3>
+                  <p>Вратарь</p>
+                </div>
+            </div>
+          </div>
+          <button class="slider-btn next">❯</button>
+        </div>
+        <form><button formaction="#" formmethod="get" class="open-page">Все участники</button></form>
+    </section>
+
+    <section class="news">
+        <h1 id="title">Новости</h1>
+        <div class="news-grid" id="news-grid">
+            <div>Загрузка...</div>
+        </div>
+        <form><button formaction="News.html" formmethod="get" class="open-page">Все новости</button></form>
+    </section>
+    
+
+    <section class="wins">
+        <h1 id="title">Победы</h1>
+        <div class="wins-info" id="wins-info">
+            <div class="info-card">
+                <h1>2</h1>
+                <p>Чемпион Таджикистана</p>
+            </div>
+            <div class="info-card">
+                <h1>2</h1>
+                <p>Суперкубок Таджикистана</p>
+            </div>
+            <div class="info-card">
+                <h1>2</h1>
+                <p>Кубок Согдийской области</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="media">
+            <div class="link" id="instagram"><img src="images/instagram.png" alt=""></div>
+            <div class="link" id="facebook"><img src="images/facebook.png" alt=""></div>
+            <div class="link" id="telegram"><img src="images/telegram.png" alt=""></div>
+            <div class="link" id="youtube"><img src="images/youtube.png" alt=""></div>
+        </div>
+        <div class="pages">
+            <h2>Вкладки</h2>
+            <a href="" class="link">Главная страница</a>
+            <a href="about.html" class="link">История клуба</a>
+            <a href="" class="link">Команда изнутри</a>
+            <a href="" class="link">Игровой календарь</a>
+        </div>
+    </div>
+
+    <div class="copyright">© 2025 Все права защищены</div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
