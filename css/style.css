@@ -1,0 +1,731 @@
+/* ОБЩЕЕ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background: #000000;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+
+/* ОСТАЛЬНОЕ */
+.title {
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    margin: 10px 0 15px 0;
+}
+
+.open-page {
+    width: 20%;
+    min-width: 260px;
+    height: 40px;
+    border: 2px solid #ffffff50;
+    background-color: #171717;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+}
+
+.open-page:hover {
+    transform: scale(1.03);
+}
+
+
+/* СКРОЛЛБАР */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: #22222200;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ХЕДЕР */
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    background-color: #222;
+}
+
+.language-text {
+    color: whitesmoke;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.language-text:first-child {
+    font-weight: bold;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.profile .avatar {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 32px;
+    color: white;
+    background-color: #b90900d0;
+    backdrop-filter: blur(15px);
+}
+
+.sponsors {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.sponsors img{
+    width: 100%;
+    height: 100%;
+}
+
+.logo img {
+    width: 75px;
+    height: 75px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    min-width: 120px;
+}
+
+.menu a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: url("../images/ui/menu.svg");
+    background-size: 100% 100%;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* БАННЕР */
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #151515;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: white;
+    opacity: 0;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.3s;
+    z-index: 2;
+    padding: 10px;
+}
+
+.banner:hover .banner-btn {
+    opacity: 0.7;
+}
+
+.left {
+    left: 5px;
+}
+.right {
+    right: 5px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.2;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.dots .active {
+    opacity: 1;
+}
+
+
+/* МАТЧИ и КАЛЕНДАРЬ */
+.matches-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 18px;
+    padding: 18px;
+}
+
+.matches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 70%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 14px;
+    background-color: #141414;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.match {
+    padding: 12px 0;
+    background-color: #090909;
+    border-left: 5px #a80800 solid;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.match:hover {
+    transform: scale(1.01);
+}
+
+.match-date {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e8e8e8;
+}
+
+.match-title {
+    font-size: 20px;
+    color: #f2f2f2;
+    margin: 6px 0;
+}
+
+.match-location {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.calendar-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #141414;
+    flex: 1 1 25%;
+    max-width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.day-names,
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-names div {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.days div {
+    aspect-ratio: 1/1;
+    padding: 10px 0;
+    border-radius: 7px;
+    background-color: #080808;
+    color: #ffffff80;
+    text-align: center;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.days div:hover {
+    background-color: #950c00;
+    cursor: pointer;
+}
+
+.days .today {
+    background-color: #B72C2C;
+    color: #fff;
+}
+
+
+/* СЛАЙДЕР ИГРОКОВ */
+.players-section {
+    padding: 28px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+#title {
+    margin: 15px;
+    font-size: 2em;
+    color: #ffffffc5;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slider-container {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 calc(22% - 20px);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    text-align: center;
+    background-color: #a3a3a3;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    padding: 10px 0;
+    background: #c80018;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.info:hover {
+    padding: 15px 0;
+}
+
+.players-slider-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    padding: 10px;
+    font-size: 2em;
+    border: none;
+    border-radius: 6px;
+    background: #80808099;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1200px) {
+    .slide {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 800px) {
+    .slide {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 500px) {
+    .slide {
+        flex: 0 0 100%;
+    }
+}
+
+
+/* НОВОСТИ */
+.news-section {
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+}
+
+.news-section h1 {
+    font-size: 2em;
+    color: #ffffffc5;
+    margin: 15px;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* Мобильная версия: горизонтальный скролл */
+@media (max-width: 768px) {
+    .news-grid {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 12px;
+    }
+
+    .news-grid::-webkit-scrollbar {
+        display: none; /* Скрываем скроллбар */
+    }
+
+    .news-card {
+        scroll-snap-align: start;
+        flex: 0 0 auto;
+        min-width: 260px;
+    }
+}
+
+.news-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    max-width: 90%;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #5c000070;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.news-card img,
+.news-card .gradient-bg {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.news-card:hover {
+    transform: scale(1.025);
+}
+
+.news-card h3 {
+    font-size: 16px;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.news-card p {
+    font-size: 13px;
+    color: #c9c9c9;
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.3s;
+}
+
+.news-card.open p {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 8px;
+}
+
+.news-date {
+    font-size: 11px;
+    color: #aaa;
+    text-align: right;
+    padding-top: 8px;
+    margin-top: auto;
+}
+
+.news-card.fresh {
+    border: 2px solid #B72C2C;
+    background-color: #5c000090;
+}
+
+.tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: #B72C2C;
+    color: #fff;
+    font-size: 11px;
+}
+
+/* ПОБЕДЫ */
+.wins-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    padding: 18px;
+}
+
+.wins #title {
+    margin-bottom: 0;
+}
+
+.wins-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: min-content;
+    border-radius: 12px;
+    gap: 10%;
+    text-align: left;
+}
+
+.wins-info .info-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    height: min-content;
+    gap: 8px;
+}
+
+.wins-info .info-card h1 {
+    font-size: 4em;
+    font-weight: 800;
+    color: #8b0000;
+}
+
+.wins-info .info-card p {
+    font-size: 1.3em;
+    color: #ffffff80;
+}
+
+
+/* ФУТЕР */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 20px;
+    margin-top: 15px;
+    color: white;
+    background-color: #181818;
+    text-align: center;
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.footer .footer-content .pages {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    gap: 15px;
+    font-weight: 100;
+}
+
+.footer .footer-content .pages a {
+    color: white;
+    text-decoration: none;
+}
+
+.media {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    aspect-ratio: 1/1;
+    gap: 4%;
+}
+
+.media .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    height: 48%;
+    background-color: #121211;
+    cursor: pointer;
+}
+
+.media .link img {
+    width: 40%;
+    height: 40%;
+}
+
+#instagram {
+    background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+#facebook {
+    background-color: #1877f2;
+}
+
+#youtube {
+    background-color: #ff0000;
+}
+
+#telegram {
+    background-color: #0088cc;
+}
+
+.copyright {
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 5px 15px;
+    }
+
+    .menu {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: 10px;
+        border-radius: 10px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transform: scale(0);
+        transform-origin: top;
+        pointer-events: none;
+        background-color: #b90900d0;
+    }
+    
+
+    .menu.active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .title {
+        font-size: 1.8em;
+    }
+
+    .match-date {
+        font-size: 14px;
+    }
+
+    .match-title {
+        font-size: 16px;
+    }
+
+    .match-location {
+        font-size: 12px;
+    }
+
+    .wins-info .info-card {
+        width: 80%;
+        justify-content: start;
+    }
+
+    .footer .footer-content .media {
+        width: 180px;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФК Сипар - Авторизация</title>
+    <link rel="stylesheet" href="../css/authorisation.css">
+</head>
+<body>
+    <div class="background">
+        <div class="pulse"></div>
+    </div>
+
+    <form><button formaction="index.html" formmethod="get" class="backBtn">❮</button></form>
+
+    <div class="container">
+        <div class="form-box">
+            <div class="toggle-buttons">
+                <button id="showRegister" class="active">Регистрация</button>
+                <button id="showLogin">Вход</button>
+            </div>
+
+            <form id="registerForm" class="form active">
+                <input type="text" placeholder="Имя пользователя" required>
+                <input type="email" placeholder="Электронная почта" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+
+            <form id="loginForm" class="form">
+                <input type="text" placeholder="Имя или эл. почта пользователя" required>
+                <input type="password" placeholder="Пароль пользователя" required>
+                <button type="submit">Войти</button>
+                <a href="#">Забыли пароль?</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/autorization.js"></script>
+</body>
+</html>

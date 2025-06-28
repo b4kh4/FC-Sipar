@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФК Сипар - Главная</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-header">
+        <div class="languages"><a href="" class="language-text" id="ru">RU</a> | <a href="" class="language-text" id="en">EN</a> | <a href="" class="language-text" id="tj">TJ</a></div>
+        <!-- # -->
+        <a class="profile" href="authorisation.html">
+            <span> Логин </span>
+            <img src="../images/ui/user.svg" class="avatar"></img>
+        </a>
+    </header>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="../images/ui/tempLogo.svg">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="calendar.html">Матчи</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="members.html">Состав</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <button class="burger" id="burger"></button>
+    </header>
+
+    <main class="main">
+        <div class="banner">
+            <div class="banner-btn left">❮</div>
+            <div class="slider-track" id="slider-track"></div>
+            <div class="banner-btn right">❯</div>
+            <div class="dots" id="dots"></div>
+        </div>
+
+        <section class="matches-section">
+            <div class="matches-container">
+                <h1 class="title">Предстоящие матчи</h1>
+                <div class="match">
+                    <div class="match-date">1 июля 2025, 18:00</div>
+                    <div class="match-title">Сипар vs Истиклол</div>
+                    <div class="match-location">Стадион "Спартак", Душанбе</div>
+                </div>
+        
+                <div class="match">
+                    <div class="match-date">7 июля 2025, 17:30</div>
+                    <div class="match-title">Сипар vs Регар-ТадАЗ</div>
+                    <div class="match-location">Стадион "Металлург", Турсунзаде</div>
+                </div>
+                
+                <div class="match">
+                    <div class="match-date">12 июля 2025, 16:30</div>
+                    <div class="match-title">Сипар vs Истиклол</div>
+                    <div class="match-location">Стадион "Спартак", Душанбе</div>
+                </div>  
+            </div>
+
+            <div class="calendar-section">
+                    <h1 class="title" id="calendar-title">Загрузка...</h1>
+                    <div class="day-names">
+                        <div>Пн</div>
+                        <div>Вт</div>
+                        <div>Ср</div>
+                        <div>Чт</div>
+                        <div>Пт</div>
+                        <div>Сб</div>
+                        <div>Вс</div>
+                    </div>
+                    <div class="days" id="days"></div>
+            </div>
+        </section>
+        <form><button formaction="calendar.html" formmethod="get" class="open-page">Все матчи</button></form>    
+
+        <section class="players-section">
+            <h1 class="title">Участники</h1>
+            <div class="slider-wrapper">
+                <button class="players-slider-btn left">❮</button>
+                <div class="slider-container">
+                    <div class="slide">
+                        <img src="">
+                        <div class="info">
+                            <h3>Барри Ален</h3>
+                            <p>Лидер команды</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="">
+                        <div class="info">
+                            <h3>Роберт Полсон</h3>
+                            <p>Нападающий</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="">
+                        <div class="info">
+                            <h3>Александр Махоун</h3>
+                            <p>Полузащитник</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="">
+                        <div class="info">
+                            <h3>Ламин Ямал</h3>
+                            <p>Вратарь</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="players-slider-btn right">❯</button>
+            </div>
+        </section>
+        <form><button formaction="members.html" formmethod="get" class="open-page">Все участники</button></form>
+
+        <section class="news-section">
+            <h1 class="title">Новости</h1>
+            <div class="news-grid" id="news-grid">
+                <div>Загрузка...</div>
+            </div>
+        </section>
+        <form><button formaction="news.html" formmethod="get" class="open-page">Все новости</button></form>
+
+        <section class="wins-section">
+            <h1 class="title">Победы</h1>
+            <div class="wins-info" id="wins-info">
+                <div class="info-card">
+                    <h1>2</h1>
+                    <p>Чемпион Таджикистана</p>
+                </div>
+                <div class="info-card">
+                    <h1>2</h1>
+                    <p>Суперкубок Таджикистана</p>
+                </div>
+                <div class="info-card">
+                    <h1>2</h1>
+                    <p>Кубок Согдийской области</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="media">
+                <div class="link" id="instagram"><a href="https://www.instagram.com/p/CnbSb5Mhu4I" target="_blank" rel="noopener noreferrer"><img src="../images/ui/instagram.svg"></a></div>
+                <div class="link" id="facebook"><a href="https://www.facebook.com/fcsipar0501" target="_blank" rel="noopener noreferrer"><img src="../images/ui/facebook.svg"></a></div>
+                <div class="link" id="telegram"><a href="https://t.me/fcsipar" target="_blank" rel="noopener noreferrer"><img src="../images/ui/telegram.svg"></a></div>
+                <div class="link" id="youtube"><a href="https://www.youtube.com/@futsalclubsipar4220/videos" target="_blank" rel="noopener noreferrer"><img src="../images/ui/youtube.svg"></a></div>
+            </div>
+            <div class="pages">
+                <h2>Все вкладки</h2>
+                <a href="news.html" class="link">Последние новости</a>
+                <a href="calendar.html" class="link">Игровой календарь</a>
+                <a href="members.html" class="link">Участники команды</a>
+                <a href="gallery.html" class="link">Смешанная галерея</a>
+                <a href="about.html" class="link">Вся история клуба</a>
+            </div>
+        </div>
+        <div class="copyright">© 2025 Все права защищены</div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
