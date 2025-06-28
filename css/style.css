@@ -241,7 +241,7 @@ body {
     gap: 10px;
     flex: 1 1 70%;
     max-width: 100%;
-    padding: 20px;
+    padding: 14px;
     border-radius: 14px;
     background-color: #141414;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -249,7 +249,7 @@ body {
 }
 
 .match {
-    padding: 12px 0;
+    padding: 6px 0;
     background-color: #090909;
     border-left: 5px #a80800 solid;
     border-radius: 10px;
@@ -285,7 +285,6 @@ body {
     flex: 1 1 25%;
     max-width: 100%;
     border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
@@ -327,7 +326,7 @@ body {
 
 /* СЛАЙДЕР ИГРОКОВ */
 .players-section {
-    padding: 28px;
+    padding: 18px;
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
@@ -471,10 +470,11 @@ body {
     max-width: 90%;
     padding: 16px;
     border-radius: 10px;
-    background-color: #5c000070;
+    background-color: #300000;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: transform 0.25s ease;
+    line-height: 1.1;
 }
 
 .news-card img,
