@@ -102,7 +102,7 @@ body {
     justify-content: space-between;
     padding: 6px 32px;
     color: white;
-    background-color: #b90900d0;
+    background-color: #b90900c0;
     backdrop-filter: blur(15px);
 }
 
@@ -232,7 +232,7 @@ body {
     justify-content: space-between;
     width: 100%;
     gap: 18px;
-    padding: 18px;
+    padding: 14px;
 }
 
 .matches-container {
@@ -285,14 +285,14 @@ body {
     flex: 1 1 25%;
     max-width: 100%;
     border-radius: 14px;
-    padding: 20px;
+    padding: 14px;
 }
 
 .day-names,
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    gap: 4px;
 }
 
 .day-names div {
@@ -326,7 +326,7 @@ body {
 
 /* СЛАЙДЕР ИГРОКОВ */
 .players-section {
-    padding: 18px;
+    padding: 14px;
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
@@ -422,7 +422,7 @@ body {
 /* НОВОСТИ */
 .news-section {
     width: 100%;
-    padding: 18px;
+    padding: 14px;
     text-align: center;
 }
 
@@ -545,7 +545,7 @@ body {
     justify-content: center;
     width: 100%;
     height: max-content;
-    padding: 18px;
+    padding: 14px;
 }
 
 .wins #title {
