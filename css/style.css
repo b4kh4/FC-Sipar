@@ -15,7 +15,7 @@ body {
 
 /* ОСТАЛЬНОЕ */
 .title {
-    font-size: 2em;
+    font-size: 1.7em;
     text-align: center;
     color: #fff;
     margin: 10px 0 15px 0;
@@ -232,7 +232,7 @@ body {
     justify-content: space-between;
     width: 100%;
     gap: 18px;
-    padding: 14px;
+    padding: 10px;
 }
 
 .matches-container {
@@ -326,7 +326,7 @@ body {
 
 /* СЛАЙДЕР ИГРОКОВ */
 .players-section {
-    padding: 14px;
+    padding: 24px;
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
@@ -422,7 +422,7 @@ body {
 /* НОВОСТИ */
 .news-section {
     width: 100%;
-    padding: 14px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -545,7 +545,7 @@ body {
     justify-content: center;
     width: 100%;
     height: max-content;
-    padding: 14px;
+    padding: 10px;
 }
 
 .wins #title {
