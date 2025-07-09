@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -532,7 +533,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 12%;
+    gap: 10%;
 }
 
 .bottom-section section {
