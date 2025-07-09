@@ -47,10 +47,10 @@ header h1 {
 }
         
 .news-card {
-    background-color: #241717;
-    border-radius: 10px;
+    background-color: #420000;
+    border-radius: 16px;
     box-shadow: 0 1px 6px rgba(0,0,0,0.3);
-    transition: transform 0.25s ease;
+    transition: transform 0.5s ease;
     position: relative;
     padding: 16px;
     cursor: pointer;
@@ -65,7 +65,7 @@ header h1 {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 14px;
     margin-bottom: 12px;
 }
 
@@ -125,8 +125,13 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 14px;
     align-items: start;
+    padding-top: 42px;
+}
+
+.news-group:first-child {
+    padding-top: 0;
 }
 
 .nameOfMonth {

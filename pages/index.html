@@ -126,40 +126,61 @@
         </section>
         <form><button formaction="news.html" formmethod="get" class="open-page">Все новости</button></form>
 
-        <section class="wins-section">
-            <h1 class="title">Победы</h1>
-            <div class="wins-info" id="wins-info">
-                <div class="info-card">
-                    <h1>2</h1>
-                    <p>Чемпион Таджикистана</p>
+        <section class="bottom-section">
+            <section class="wins-section">
+                <h1 class="title">Число побед</h1>
+                <!-- <div class="wins-info" id="wins-info">
+                    <div class="info-card">
+                        <h1>2</h1>
+                        <p>Чемпион Таджикистана</p>
+                    </div>
+                    <div class="info-card">
+                        <h1>2</h1>
+                        <p>Суперкубок Таджикистана</p>
+                    </div>
+                    <div class="info-card">
+                        <h1>2</h1>
+                        <p>Кубок Согдийской области</p>
+                    </div>
+                </div> -->
+                <div id="cup">
+                    <h1 id="wins-count">33</h1>
                 </div>
-                <div class="info-card">
-                    <h1>2</h1>
-                    <p>Суперкубок Таджикистана</p>
+            </section>
+
+            <section class="media-section">
+                <h1 class="title">Наши соцсети</h1>
+                <div class="media">
+                    <div class="link" id="instagram"><a href="https://www.instagram.com/p/CnbSb5Mhu4I" target="_blank" rel="noopener noreferrer"><img src="../images/ui/instagram.svg"></a></div>
+                    <div class="link" id="facebook"><a href="https://www.facebook.com/fcsipar0501" target="_blank" rel="noopener noreferrer"><img src="../images/ui/facebook.svg"></a></div>
+                    <div class="link" id="telegram"><a href="https://t.me/fcsipar" target="_blank" rel="noopener noreferrer"><img src="../images/ui/telegram.svg"></a></div>
+                    <div class="link" id="youtube"><a href="https://www.youtube.com/@futsalclubsipar4220/videos" target="_blank" rel="noopener noreferrer"><img src="../images/ui/youtube.svg"></a></div>
                 </div>
-                <div class="info-card">
-                    <h1>2</h1>
-                    <p>Кубок Согдийской области</p>
-                </div>
-            </div>
+            </section>
         </section>
+
     </main>
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="media">
-                <div class="link" id="instagram"><a href="https://www.instagram.com/p/CnbSb5Mhu4I" target="_blank" rel="noopener noreferrer"><img src="../images/ui/instagram.svg"></a></div>
-                <div class="link" id="facebook"><a href="https://www.facebook.com/fcsipar0501" target="_blank" rel="noopener noreferrer"><img src="../images/ui/facebook.svg"></a></div>
-                <div class="link" id="telegram"><a href="https://t.me/fcsipar" target="_blank" rel="noopener noreferrer"><img src="../images/ui/telegram.svg"></a></div>
-                <div class="link" id="youtube"><a href="https://www.youtube.com/@futsalclubsipar4220/videos" target="_blank" rel="noopener noreferrer"><img src="../images/ui/youtube.svg"></a></div>
+            <div class="pages" id="left-side">
+                <h3>Вкладки</h3>
+                <a href="news.html" class="link">Новости клуба</a>
+                <a href="calendar.html" class="link">Календарь и матчи</a>
+                <a href="members.html" class="link">Участники</a>
+                <a href="gallery.html" class="link">Галерея клуба</a>
+                <a href="about.html" class="link">История клуба</a>
             </div>
-            <div class="pages">
-                <h2>Все вкладки</h2>
-                <a href="news.html" class="link">Последние новости</a>
-                <a href="calendar.html" class="link">Игровой календарь</a>
-                <a href="members.html" class="link">Участники команды</a>
-                <a href="gallery.html" class="link">Смешанная галерея</a>
-                <a href="about.html" class="link">Вся история клуба</a>
+            <div id="right-side">
+                <div class="contacts">
+                    <h3>Наши контакты</h3>
+                    <p><b>E-mail:</b> example@gmail.com</p>
+                    <p><b>Номер:</b> 00 000 0000</p>
+                </div>
+                <div class="sponsores">
+                    <h3>Наши спонсоры</h3>
+                    <img src="../images/ui/tawhidbank.png" alt="">
+                </div>
             </div>
         </div>
         <div class="copyright">© 2025 Все права защищены</div>
