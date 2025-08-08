@@ -16,6 +16,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+button, a, div {
+    -webkit-tap-highlight-color: transparent;
+}
+
 header {
     padding: 20px;
     background-color: #1a1a1a;

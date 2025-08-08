@@ -19,7 +19,7 @@ button, a, div {
 
 /* ОСТАЛЬНОЕ */
 .title {
-    font-size: 1.8em;
+    font-size: 2em;
     text-align: center;
     color: #fff;
     margin: 10px 0 15px 0;
@@ -422,7 +422,7 @@ button, a, div {
 .news-section {
     width: 100%;
     padding: 42px 10px 8px 10px;
-    text-align: center;
+    text-align: left;
 }
 
 .news-grid {
@@ -444,7 +444,7 @@ button, a, div {
     }
 
     .news-grid::-webkit-scrollbar {
-        display: none; /* Скрываем скроллбар */
+        display: none;
     }
 
     .news-card {

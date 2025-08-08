@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ФК Сипар - Галерея</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <style>
+            * {
+                user-select: none;
+            }
+
+            html, body {
+                margin: 0;
+                overflow: hidden;
+                height: 100%;
+                touch-action: none;
+                background-color: #0d0d0d;
+            }
+
+            header {
+                padding: 20px;
+                background-color: #1a1a1a;
+                text-align: center;
+                border-bottom: 1px solid red;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            header button {
+                height: 40px;
+                aspect-ratio: 1/1;
+                font-size: 1.2em;
+                border: none;
+                border-radius: 8px;
+                background: #232323;
+                color: white;
+                cursor: pointer;
+            }
+
+            header h1 {
+                margin: auto;
+                font-size: 2em;
+                color: #ff3333;
+            }
+
+            #viewport {
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                position: relative;
+                cursor: grab;
+            }
+            
+            #map {
+                position: absolute;
+                transform-origin: 0 0;
+            }
+
+            .photo {
+                position: absolute;
+                object-fit: cover;
+                border-radius: 16px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <form><button formaction="../index.html" formmethod="get" class="backBtn">❮</button></form>
+            <h1>Галерея</h1>
+        </header>
+
+        <div id="viewport">
+            <div id="map"></div>
+        </div>
+
+        <script>
+            const map = document.getElementById('map');
+            const viewport = document.getElementById('viewport');
+
+            const MAP_WIDTH = 3000;
+            const MAP_HEIGHT = 3000;
+            const IMAGE_COUNT = 40;
+            const images = [];
+            const placedRects = [];
+
+            map.style.width = MAP_WIDTH + 'px';
+            map.style.height = MAP_HEIGHT + 'px';
+
+            // Функция проверки пересечений
+                function intersects(x, y, w, h) {
+                const spacing = 20; // 🔧 ← Увеличь это число, чтобы увеличить расстояние между фото
+                return placedRects.some(rect => {
+                    return !(
+                    x + w + spacing < rect.x ||
+                    x > rect.x + rect.w + spacing ||
+                    y + h + spacing < rect.y ||
+                    y > rect.y + rect.h + spacing
+                    );
+                });
+                }
+
+
+            // Расставляем изображения без наложений
+            for (let i = 0; i < IMAGE_COUNT; i++) {
+                const width = 150 + Math.floor(Math.random() * 150);
+                const height = 150 + Math.floor(Math.random() * 150);
+                let x, y, tries = 0;
+                do {
+                x = Math.floor(Math.random() * (MAP_WIDTH - width));
+                y = Math.floor(Math.random() * (MAP_HEIGHT - height));
+                tries++;
+                if (tries > 500) break;
+                } while (intersects(x, y, width, height));
+                placedRects.push({ x, y, w: width, h: height });
+
+                const img = document.createElement('img');
+                img.src = `https://picsum.photos/${width}/${height}?random=${i}`;
+                img.className = 'photo';
+                img.style.width = width + 'px';
+                img.style.height = height + 'px';
+                img.style.left = x + 'px';
+                img.style.top = y + 'px';
+                map.appendChild(img);
+            }
+
+            let isPanning = false;
+            let startX = 0, startY = 0;
+            let offsetX = 0, offsetY = 0;
+            let scale = 1;
+
+            function updateTransform() {
+                map.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+            }
+
+            // 🖱️ ПК - перемещение
+            viewport.addEventListener('mousedown', (e) => {
+                isPanning = true;
+                startX = e.clientX - offsetX;
+                startY = e.clientY - offsetY;
+                viewport.style.cursor = 'grabbing';
+            });
+
+            viewport.addEventListener('mouseup', () => {
+                isPanning = false;
+                viewport.style.cursor = 'grab';
+            });
+
+            viewport.addEventListener('mouseleave', () => {
+                isPanning = false;
+                viewport.style.cursor = 'grab';
+            });
+
+            viewport.addEventListener('mousemove', (e) => {
+                if (!isPanning) return;
+                offsetX = e.clientX - startX;
+                offsetY = e.clientY - startY;
+                updateTransform();
+            });
+
+            // 🔍 ПК - масштабирование мышью
+            viewport.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = viewport.getBoundingClientRect();
+                const pointerX = e.clientX - rect.left;
+                const pointerY = e.clientY - rect.top;
+                zoomAtPoint(e.deltaY < 0 ? 1.1 : 0.9, pointerX, pointerY);
+            });
+
+            // 📱 Мобильные: перемещение и pinch-zoom
+            let lastTouchDist = null;
+            let lastCenter = null;
+
+            viewport.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                isPanning = true;
+                startX = e.touches[0].clientX - offsetX;
+                startY = e.touches[0].clientY - offsetY;
+                } else if (e.touches.length === 2) {
+                isPanning = false;
+                lastTouchDist = getTouchDistance(e.touches);
+                lastCenter = getTouchCenter(e.touches);
+                }
+            });
+
+            viewport.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (e.touches.length === 1 && isPanning) {
+                offsetX = e.touches[0].clientX - startX;
+                offsetY = e.touches[0].clientY - startY;
+                updateTransform();
+                } else if (e.touches.length === 2) {
+                const newDist = getTouchDistance(e.touches);
+                const newCenter = getTouchCenter(e.touches);
+                const delta = newDist / lastTouchDist;
+                zoomAtPoint(delta, newCenter.x, newCenter.y);
+                lastTouchDist = newDist;
+                lastCenter = newCenter;
+                }
+            }, { passive: false });
+
+            viewport.addEventListener('touchend', () => {
+                isPanning = false;
+                lastTouchDist = null;
+            });
+
+            function getTouchDistance(touches) {
+                const dx = touches[0].clientX - touches[1].clientX;
+                const dy = touches[0].clientY - touches[1].clientY;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+
+            function getTouchCenter(touches) {
+                return {
+                x: (touches[0].clientX + touches[1].clientX) / 2,
+                y: (touches[0].clientY + touches[1].clientY) / 2
+                };
+            }
+
+            // Масштабирование относительно точки
+            function zoomAtPoint(zoomFactor, centerX, centerY) {
+                const prevScale = scale;
+                scale *= zoomFactor;
+                scale = Math.max(0.2, Math.min(scale, 5));
+
+                const dx = centerX - offsetX;
+                const dy = centerY - offsetY;
+
+                offsetX -= dx * (scale / prevScale - 1);
+                offsetY -= dy * (scale / prevScale - 1);
+
+                updateTransform();
+            }
+        </script>
+
+    </body>
+</html>
